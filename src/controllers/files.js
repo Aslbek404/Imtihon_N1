@@ -50,7 +50,7 @@ const FilesGet = (req, res) => {
         let file = files.filter(file => file.fileName == fileName)
         let fil = file.map(fil => {
             fil.user = users.find(user => user.userId == +fil.userId)
-            fil.viewLink = "http://localhost:8585/" + fil.link
+            fil.viewLink = fil.link
             fil.downloadLink = fil.link
             delete fil.user.password
             return fil
@@ -64,7 +64,7 @@ const FilesGet = (req, res) => {
     
         let fil = files.map(fil => {
             fil.user = users.find(user => user.userId == +fil.userId)
-            fil.viewLink = "http://localhost:8585/" + fil.link
+            fil.viewLink =  fil.link
             fil.downloadLink = fil.link
             delete fil.user.password
             return fil
